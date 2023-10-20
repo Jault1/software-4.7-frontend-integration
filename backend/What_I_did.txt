@@ -1,0 +1,16 @@
+npx create-react-app software-4.7-frontend-integration
+clean up files / code
+add MY files folders to frontend folder
+$ npm run start
+Move frontend code from class download to my frontend folder excecpt for node_modules, package.json
+Copy dependencies from downloaded to mine
+$ npm install -- to download dependencies
+$ npm run start -- RUN THE FRONTEND code
+
+Create a backend folder
+Copy MY package.json from frontend and then copy the backend dependencies (from download in)
+$ npm install -- to download dependencies
+$ nodemon index.js -- from inside the backend folder
+--make sure backend and frontend are running
+
+-- See my screenshot
