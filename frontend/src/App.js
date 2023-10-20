@@ -1,42 +1,42 @@
 import {useState, useEffect} from "react";
-import CategoryDisplay from "./components/CategoryDisplay";
-import AddCategoryForm from "./components/AddCategoryForm";
+import ItemDisplay from "./components/ItemDisplay";
+import AddItemForm from "./components/AddItemForm";
 
 import './App.css';
 import apiConn from './api/conn';
 
 function App() {
-  const [categories, setCategories] = useState([]);
+  const [items, setItems] = useState([]);
 
-  const getCategories = async () => {
+  const getItems = async () => {
     try {
-      const response = await apiConn.get("/categories");
+      const response = await apiConn.get("/items");
       console.log(response.data);
-      setCategories(response.data);
+      setItems(response.data);
     } catch (error) {
       console.log(error.message);
     }
   } 
 
-  const createCategory = async (categoryName) => {
+  const createItem = async (itemName) => {
     try {
-      const response = await apiConn.post("/categories", {name: categoryName});
+      const response = await apiConn.post("/items", {name: itemName});
       console.log(response.data);
-      getCategories();
+      getItems();
     } catch (error) {
       console.log(error.message);
     }
   }
 
   useEffect(() => {
-    getCategories();
+    getItems();
   }, []);
 
   return (
     <div className="App">
-      <h1>Category List</h1>
-      <AddCategoryForm handlerAddCategory={createCategory}/>
-      <CategoryDisplay list={categories}/>
+      <h1>Item List</h1>
+      <AddItemForm handlerAddItem={createItem}/>
+      <ItemDisplay list={items}/>
     </div>
   );
 }
