@@ -19,25 +19,26 @@ const AddItemForm = ({ handlerAddItem }) => {
 
   const handlerSubmit = (event) => {
     event.preventDefault();
-    handlerAddItem(itemName);
+    handlerAddItem(itemName,itemPrice, itemDescription);
+    alert("Form submission: " + itemName + " | " + itemPrice + " | " + itemDescription)
   };
 
   return (
     <div>
       <form onSubmit={handlerSubmit}>
-        <input
+        <input id="itemName"
           type="text"
           name="name"
           placeholder="Item name"
           onChange={handlerName}
         /><br></br>
-        <input
+        <input id="itemPrice"
           type="text"
           name="price"
           placeholder="Price"
           onChange={handlerPrice}
         /><br></br>
-        <input
+        <input id="itemDescription"
           type="text"
           name="description"
           placeholder="Description"

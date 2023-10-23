@@ -17,11 +17,12 @@ exports.addNewItem = async (req, res) => {
     await Item.create({
         name: req.body.name,
         price: req.body.price,
-        description: req.body.description
-    });
+        description: req.body.description,
+        category_id: req.params.id,        
+});
     const result = await Item.findByPk(req.params.id);
     return res.json(result);
-}
+};
 
 exports.editItem = async (req, res) => {
     const result = await Item.findByPk(req.params.id);

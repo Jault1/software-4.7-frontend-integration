@@ -13,17 +13,21 @@ const Item = sequelize.define("item", {
     },    
     price: {
         type: DataTypes.DECIMAL(10, 2),
-        allowNull: false
+        allowNull: true,
+        defaultValue: 2.99
     },
     description: {
         type: DataTypes.TEXT,
-        allowNull: false
-    },
+        allowNull: true,
+        defaultValue: "Default description."
+    }
+    ,
     category_id: {
         type: DataTypes.INTEGER
     }
 
-}, {
+}
+, {
     timestamps: false
 });
 

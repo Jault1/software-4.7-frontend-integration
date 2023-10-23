@@ -7,7 +7,7 @@ const ItemDisplay = ({list}) => {
             <ul>
             {list && 
                 list.map((item) => (
-                    <li key={item.id}>{item.name}</li>
+                    <li key={item.id}>{item.price} | {item.name} | {item.description} | {item.category_id}</li>
                 ))
             }
             </ul>
