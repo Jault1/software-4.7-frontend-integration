@@ -1,5 +1,5 @@
 import styles from "./CategoryDisplay.module.css";
-
+// display all the categories
 const ItemDisplay = ({list}) => {
     return (
         <div>
